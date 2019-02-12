@@ -1,0 +1,105 @@
+﻿html, body, #map {
+    height: 100%;
+    width:100%;
+    margin: 0;
+    padding: 0;
+}
+/*#map_root{
+    height:544px !important;
+}*/
+#search {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 119px;
+    left:68px;
+    opacity:1;
+}
+.dropbtn {
+    background-color:transparent;
+    color: black;
+    padding: 0px;
+    font-size: 16px;
+    border:solid;
+    border-width:1px;
+    border-color:darkgray;
+    cursor: pointer;
+    width: 237px;
+    height:40px;
+    padding-left:15px;
+}
+
+    .dropbtn:hover, .dropbtn:focus {
+        background-color:transparent;
+    }
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 264px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: wavy;
+        display: block;
+    }
+
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+#measurement
+{
+    color:black;
+    background-color:gray;
+}
+
+
+.ovwContainer {
+    width: 250px !important;
+    height: 152px !important;
+    top: 109px !important;
+    right: 261px !important;
+}
+
+#printer {
+    vertical-align: middle;
+    /*text-align: left;*/
+    padding-left: 1px;
+    color: black;
+    font-size: 16px;
+    width: 238px;
+    height: 40px;
+}
+.esriPrint {
+    height: 40px !important;
+    width: 235px !important;
+}
+.dijitTitlePaneContentInner{
+    padding:0px !important;
+}
+.esriBasemapGallery{
+    font-size:0px !important;
+}
+.esriBasemapGalleryLabelContainer{
+    padding:0px !important;
+}
+.dijitContentPane {
+    width: 205px !important;
+    height: 113px !important;
+}
