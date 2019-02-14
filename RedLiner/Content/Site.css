@@ -46,5 +46,7 @@
 .esriPrint{
  width:0px !important;
  font-size:15px !important;
-
+}
+.ovwHighlight{
+    border-color:crimson !important;
 }
