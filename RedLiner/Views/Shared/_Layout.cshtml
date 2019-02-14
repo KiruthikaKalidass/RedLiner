@@ -10,7 +10,7 @@
     @Scripts.Render("~/bundles/modernizr")
     <script src="https://js.arcgis.com/3.27/"></script>
     <script>
-        var toolbar, symbol, geomTask;
+        var toolbar, symbol, geomTask, openStreetMapLayer;
        
 
         require([
@@ -30,19 +30,21 @@
             "esri/dijit/OverviewMap",
             "esri/dijit/Print",
             "esri/dijit/LocateButton",
+            "esri/layers/OpenStreetMapLayer",
             "dijit/layout/BorderContainer",
             "dijit/layout/ContentPane",
             "dijit/TitlePane",
             "dijit/form/Button",
             "dijit/WidgetSet",
             "dojo/domReady!"
-        ], function (Map, Search, Scalebar, Draw, Graphic, SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol, parser, registry, Measurement, BasemapGallery, arcgisUtils, OverviewMap, Print, LocateButton) {
+        ], function (Map, Search, Scalebar, Draw, Graphic, SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol, parser, registry, Measurement, BasemapGallery, arcgisUtils, OverviewMap, Print, LocateButton, OpenStreetMapLayer) {
             parser.parse();
            
              var map = new Map("map", {
                 basemap: "satellite",  
                 center: [-122.45, 37.75], 
-                zoom: 13
+                 zoom: 13,
+                 smartNavigation: true
             });
             var overviewMap = new OverviewMap({
                 map: map,
@@ -54,6 +56,9 @@
                 url: "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task"
             }, "printer");
             printer.startup();
+                 openStreetMapLayer = new OpenStreetMapLayer();
+                 map.addLayer(openStreetMapLayer);
+
             var basemapGallery = new BasemapGallery({
                 showArcGISBasemaps: true,
                 map: map
@@ -82,6 +87,7 @@
                     d.on("click", activateTool);
                 }
             });
+            
 
             function activateTool() {
                 var tool = this.label.toUpperCase().replace(/ /g, "_");
