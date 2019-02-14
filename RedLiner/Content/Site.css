@@ -43,3 +43,8 @@
     left: 15px;
     z-index: 50;
 }
+.esriPrint{
+ width:0px !important;
+ font-size:15px !important;
+
+}

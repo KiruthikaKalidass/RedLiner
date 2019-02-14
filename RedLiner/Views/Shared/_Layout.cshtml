@@ -44,11 +44,11 @@
                 center: [-122.45, 37.75], 
                 zoom: 13
             });
-            var overviewMapDijit = new OverviewMap({
+            var overviewMap = new OverviewMap({
                 map: map,
                 visible: true
             });
-            overviewMapDijit.startup();
+            overviewMap.startup();
             var printer = new Print({
                 map: map,
                 url: "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task"
@@ -116,10 +116,10 @@
 
             var measurement = new Measurement({ map: map }, "measurement");
             measurement.startup();
-            geoLocate = new LocateButton({
+           myLocation = new LocateButton({
                 map: map
             }, "LocateButton");
-            geoLocate.startup();       
+            myLocation.startup();       
         });
     </script>
 </head>
