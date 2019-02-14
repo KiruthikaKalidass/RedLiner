@@ -3,12 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RedLiner</title>
+    
+        <title>RedLiner</title>
+   
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <script src="https://js.arcgis.com/3.27/"></script>
     <script>
-        var toolbar, symbol, geomTask,printer;
+        var toolbar, symbol, geomTask;
        
 
         require([
@@ -28,23 +30,30 @@
             "esri/dijit/OverviewMap",
             "esri/dijit/Print",
             "esri/tasks/PrintTemplate",
-            "esri/dijit/Directions",
             "dijit/layout/BorderContainer",
             "dijit/layout/ContentPane",
             "dijit/TitlePane",
             "dijit/form/Button",
             "dijit/WidgetSet",
             "dojo/domReady!"
-        ], function (Map, Search, Scalebar, Draw, Graphic, SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol, parser, registry, Measurement, BasemapGallery, arcgisUtils, OverviewMap, Print, PrintTemplate,Directions) {
+        ], function (Map, Search, Scalebar, Draw, Graphic, SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol, parser, registry, Measurement, BasemapGallery, arcgisUtils, OverviewMap, Print, PrintTemplate,) {
             parser.parse();
            
              var map = new Map("map", {
-                basemap: "topo",  
+                basemap: "satellite",  
                 center: [-122.45, 37.75], 
                 zoom: 13
             });
-           
-         
+            var overviewMapDijit = new OverviewMap({
+                map: map,
+                visible: true
+            });
+            overviewMapDijit.startup();
+            var printer = new Print({
+                map: map,
+                url: "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task"
+            }, "printer");
+            printer.startup();
             var basemapGallery = new BasemapGallery({
                 showArcGISBasemaps: true,
                 map: map
@@ -107,24 +116,11 @@
 
             var measurement = new Measurement({ map: map }, "measurement");
             measurement.startup();
-            var overviewMapDijit = new OverviewMap({
-                map: map,
-                visible: true
-                //attachTo: "bottom-left",
-            });
-            overviewMapDijit.startup();
-          
-            printer = new Print({
-                map: map,
-              
-                url: "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task"
-            }, "printer");
-            printer.startup();
-            //var directions = new Directions({
-            //    map: map
-            //}, "directions");
-            //directions.startup();
-        
+
+            
+            
+     
+                
         });
     </script>
 </head>
