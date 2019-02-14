@@ -37,3 +37,9 @@
     top: 5px !important;
     right: 6px !important;
 }
+#LocateButton {
+    position: absolute;
+    top: 86px;
+    left: 15px;
+    z-index: 50;
+}

@@ -29,14 +29,14 @@
             "esri/arcgis/utils",
             "esri/dijit/OverviewMap",
             "esri/dijit/Print",
-            "esri/tasks/PrintTemplate",
+            "esri/dijit/LocateButton",
             "dijit/layout/BorderContainer",
             "dijit/layout/ContentPane",
             "dijit/TitlePane",
             "dijit/form/Button",
             "dijit/WidgetSet",
             "dojo/domReady!"
-        ], function (Map, Search, Scalebar, Draw, Graphic, SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol, parser, registry, Measurement, BasemapGallery, arcgisUtils, OverviewMap, Print, PrintTemplate,) {
+        ], function (Map, Search, Scalebar, Draw, Graphic, SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol, parser, registry, Measurement, BasemapGallery, arcgisUtils, OverviewMap, Print, LocateButton) {
             parser.parse();
            
              var map = new Map("map", {
@@ -116,11 +116,10 @@
 
             var measurement = new Measurement({ map: map }, "measurement");
             measurement.startup();
-
-            
-            
-     
-                
+            geoLocate = new LocateButton({
+                map: map
+            }, "LocateButton");
+            geoLocate.startup();       
         });
     </script>
 </head>
