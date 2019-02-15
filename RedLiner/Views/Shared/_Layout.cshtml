@@ -30,7 +30,7 @@
             "esri/dijit/OverviewMap",
             "esri/dijit/Print",
             "esri/dijit/LocateButton",
-            "esri/layers/OpenStreetMapLayer",
+            //"esri/layers/OpenStreetMapLayer",
             "dijit/layout/BorderContainer",
             "dijit/layout/ContentPane",
             "dijit/TitlePane",
@@ -56,8 +56,8 @@
                 url: "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task"
             }, "printer");
             printer.startup();
-                 openStreetMapLayer = new OpenStreetMapLayer();
-                 map.addLayer(openStreetMapLayer);
+                 //openStreetMapLayer = new OpenStreetMapLayer();
+                 //map.addLayer(openStreetMapLayer);
 
             var basemapGallery = new BasemapGallery({
                 showArcGISBasemaps: true,
