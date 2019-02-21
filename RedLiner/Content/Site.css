@@ -86,3 +86,8 @@
     border: 1px solid #ccc;
     border-top: none;
 }
+hr {
+    border-color: black;
+    margin-top: 7px;
+    margin-bottom: 15px;
+}

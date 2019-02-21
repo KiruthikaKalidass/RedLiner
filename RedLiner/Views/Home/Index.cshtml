@@ -22,11 +22,11 @@
 
         <div class="right" style="width:18%; border:solid;border-color:white; float: right;">
             <div class="tab">
-                <button class="tablinks" onclick="show(event, 'RedLiner')">RedLiner</button>
-                <button class="tablinks" onclick="show(event, 'Add')">Add</button>
-                <button class="tablinks" onclick="show(event, 'View')">View</button>
+                <button class="tablinks" onclick="show(event, 'Activity')" style="width:125px;">Activity</button>
+                <button class="tablinks" onclick="show(event, 'RedLiner')" style="width:112px;">RedLiner</button>
+                
             </div>
-            <div id="RedLiner" class="tabcontent">
+            <div id="Activity" class="tabcontent">
                 <div id="search"></div>
                 <div data-dojo-type="dijit/TitlePane" data-dojo-props="title:'Shapes',open:false " style="color:black;background-color:gray;">
                     <div data-dojo-props="dijit/layout/ContentPane" style="width:250px; height:129px;overflow:auto;">
@@ -75,25 +75,36 @@
                     </div>
                 </div>
             </div>
-            <div id="Add" class="tabcontent">
+            <div id="RedLiner" class="tabcontent" style="overflow:auto;">
                 <b style="font-family:'Times New Roman';font-size:15px;">ProjectName</b>
                 <input type="text" style="height: 30px; width: 160px;" />
-                <input type="button" name="Save" value="Save" style="height: 30px;width: 50px;background-color:#d8d4d0;"/>
+                <input type="button" name="Save" value="Save" onclick="show(event,'View')" style="height: 30px;width: 50px;background-color:#d8d4d0;" />
+                <hr />
+                <div >
+                    <input type="checkbox" />Point<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
+                   
+                    <input type="checkbox" />Multi Point<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
+                   
+                    <input type="checkbox" />Line<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
+              
+                    <input type="checkbox" />PolyLine<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
+                   
+                    <input type="checkbox" />Polygon<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
+                  
+                    <input type="checkbox" />Circle<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
+               
+                    <input type="checkbox" />Ellipse<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
+                  
+                    <input type="checkbox" />Arrow<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
+                   
+                    <input type="checkbox" />Freehand Polygon<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
+                  
+                    <input type="checkbox" />Freehand PolyLine<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
+                </div>
             </div>
-            <div id="View" class="tabcontent">
-                <input type="checkbox" />Point<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
-                <input type="checkbox" />Multi Point<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
-                <input type="checkbox" />Line<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
-                <input type="checkbox" />PolyLine<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
-                <input type="checkbox" />Polygon<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
-                <input type="checkbox" />Circle<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
-                <input type="checkbox" />Ellipse<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
-                <input type="checkbox" />Arrow<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
-                <input type="checkbox" />Freehand Polygon<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
-                <input type="checkbox" />Freehand PolyLine<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
-            </div>
+         
             <script>
-                function show(evt, RedLiner) {
+                function show(evt, Activity) {
                     var i, tabcontent, tablinks;
                     tabcontent = document.getElementsByClassName("tabcontent");
                     for (i = 0; i < tabcontent.length; i++) {
@@ -103,7 +114,7 @@
                     for (i = 0; i < tablinks.length; i++) {
                         tablinks[i].className = tablinks[i].className.replace(" active", "");
                     }
-                    document.getElementById(RedLiner).style.display = "block";
+                    document.getElementById(Activity).style.display = "block";
                     evt.currentTarget.className += " active";
                 }
             </script>
