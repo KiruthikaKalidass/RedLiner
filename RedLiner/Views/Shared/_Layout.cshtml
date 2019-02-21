@@ -3,17 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-        <title>RedLiner</title>
-   
+    <title>RedLiner</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <script src="https://js.arcgis.com/3.27/"></script>
     <script>
         var toolbar, symbol, geomTask, openStreetMapLayer;
-       
-
-        require([
+               require([
             "esri/map",
             "esri/dijit/Search",
             "esri/dijit/Scalebar",
@@ -30,7 +26,6 @@
             "esri/dijit/OverviewMap",
             "esri/dijit/Print",
             "esri/dijit/LocateButton",
-            //"esri/layers/OpenStreetMapLayer",
             "dijit/layout/BorderContainer",
             "dijit/layout/ContentPane",
             "dijit/TitlePane",
@@ -41,8 +36,8 @@
             parser.parse();
            
              var map = new Map("map", {
-                basemap: "satellite",  
-                center: [-122.45, 37.75], 
+                basemap: "topo",  
+                center: [78, 10], 
                  zoom: 13,
                  smartNavigation: true
             });
@@ -56,8 +51,7 @@
                 url: "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task"
             }, "printer");
             printer.startup();
-                 //openStreetMapLayer = new OpenStreetMapLayer();
-                 //map.addLayer(openStreetMapLayer);
+                
 
             var basemapGallery = new BasemapGallery({
                 showArcGISBasemaps: true,
@@ -125,7 +119,8 @@
            myLocation = new LocateButton({
                 map: map
             }, "LocateButton");
-            myLocation.startup();       
+            myLocation.startup();  
+        
         });
     </script>
 </head>

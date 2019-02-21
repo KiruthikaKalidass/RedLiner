@@ -3,6 +3,7 @@
     width:100%;
     margin: 0;
     padding: 0;
+    overflow-y:hidden;
 }
 #map_root{
     height:544px !important;
@@ -49,4 +50,39 @@
 }
 .ovwHighlight{
     border-color:crimson !important;
+}
+.dijit dijitReset dijitInline dijitButton{
+    margin:5px!important;
+}
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: burlywood;
+    border-bottom-color:black;
+}
+
+    .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+    }
+
+        .tab button:hover {
+            background-color:gray;
+        }
+
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
 }

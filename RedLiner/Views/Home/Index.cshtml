@@ -21,56 +21,92 @@
         </div>
 
         <div class="right" style="width:18%; border:solid;border-color:white; float: right;">
+            <div class="tab">
+                <button class="tablinks" onclick="show(event, 'RedLiner')">RedLiner</button>
+                <button class="tablinks" onclick="show(event, 'Add')">Add</button>
+                <button class="tablinks" onclick="show(event, 'View')">View</button>
+            </div>
+            <div id="RedLiner" class="tabcontent">
+                <div id="search"></div>
+                <div data-dojo-type="dijit/TitlePane" data-dojo-props="title:'Shapes',open:false " style="color:black;background-color:gray;">
+                    <div data-dojo-props="dijit/layout/ContentPane" style="width:250px; height:129px;overflow:auto;">
+                        <div>
+                            &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">Point</button>
+                            &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">MultiPoint</button>
+                            &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">Line</button>
+                        </div>
+                        <br />
+                        <div>
+                            &nbsp;&nbsp;<button data-dojo-type="dijit/form/Button">Polyline</button>
+                            &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">Polygon</button>
+                            &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">Arrow</button>
+                        </div>
+                        <br />
+                        <div>
+                            &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">FreehandPolyline</button>
+                            &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">Triangle</button>
+                        </div>
+                        <br />
+                        <div>
+                            &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">FreehandPolygon</button>
+                            &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">Circle</button>
+                        </div>
+                        <br />
+                        &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">Ellipse</button>
 
-            <div id="search"></div>
-            <div data-dojo-type="dijit/TitlePane" data-dojo-props="title:'Shapes',open:false " style="color:black;background-color:gray;">
-                <div data-dojo-props="dijit/layout/ContentPane" style="width:250px; height:129px;overflow:auto;">
-                    <div>
-                        &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">Point</button>
-                        &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">MultiPoint</button>
-                        &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">Line</button>
                     </div>
-                    <br />
-                    <div>
-                        &nbsp;&nbsp;<button data-dojo-type="dijit/form/Button">Polyline</button>
-                        &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">Polygon</button>
-                        &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">Arrow</button>
+                </div>
+                <div id="titlePane" data-dojo-type="dijit/TitlePane" data-dojo-props="title:'Measurement', open:false" style="color:black;background-color:gray;">
+                    <div data-dojo-props="dijit/layout/ContentPane" style="width:231px; height:213px;overflow:auto;">
+                        <div id="measurement"></div>
                     </div>
-                    <br />
-                    <div>
-                        &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">FreehandPolyline</button>
-                        &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">Triangle</button>
-                    </div>
-                    <br />
-                    <div>
-                        &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">FreehandPolygon</button>
-                        &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">Circle</button>
-                    </div>
-                    <br />
-                    &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">Ellipse</button>
 
                 </div>
-            </div>
-
-
-            <div id="titlePane" data-dojo-type="dijit/TitlePane" data-dojo-props="title:'Measurement', open:false" style="color:black;background-color:gray;">
-                <div data-dojo-props="dijit/layout/ContentPane" style="width:231px; height:213px;overflow:auto;">
-                    <div id="measurement"></div>
+                <div data-dojo-type="dijit/TitlePane"
+                     data-dojo-props="title:'BaseMapGallery', open:false" style="color:black;background-color:gray;">
+                    <div data-dojo-type="dijit/layout/ContentPane" style="width:250px; height:103px; overflow:auto;">
+                        <div id="basemapGallery"></div>
+                    </div>
                 </div>
-
-            </div>
-            <div data-dojo-type="dijit/TitlePane"
-                 data-dojo-props="title:'BaseMapGallery', open:false" style="color:black;background-color:gray;">
-                <div data-dojo-type="dijit/layout/ContentPane" style="width:250px; height:103px; overflow:auto;">
-                    <div id="basemapGallery"></div>
+                <div data-dojo-type="dijit/TitlePane"
+                     data-dojo-props="title:'PrintMap', open:false" style="color:black;background-color:gray;">
+                    <div data-dojo-type="dijit/layout/ContentPane" style="width:250px; height:30px; overflow:auto;">
+                        <div id="printer"></div>
+                    </div>
                 </div>
             </div>
-            <div data-dojo-type="dijit/TitlePane"
-                 data-dojo-props="title:'PrintMap', open:false" style="color:black;background-color:gray;">
-                <div data-dojo-type="dijit/layout/ContentPane" style="width:250px; height:30px; overflow:auto;">
-                    <div id="printer"></div>
-                </div>
+            <div id="Add" class="tabcontent">
+                <b style="font-family:'Times New Roman';font-size:15px;">ProjectName</b>
+                <input type="text" style="height: 30px; width: 160px;" />
+                <input type="button" name="Save" value="Save" style="height: 30px;width: 50px;background-color:#d8d4d0;"/>
             </div>
+            <div id="View" class="tabcontent">
+                <input type="checkbox" />Point<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
+                <input type="checkbox" />Multi Point<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
+                <input type="checkbox" />Line<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
+                <input type="checkbox" />PolyLine<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
+                <input type="checkbox" />Polygon<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
+                <input type="checkbox" />Circle<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
+                <input type="checkbox" />Ellipse<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
+                <input type="checkbox" />Arrow<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
+                <input type="checkbox" />Freehand Polygon<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
+                <input type="checkbox" />Freehand PolyLine<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
+            </div>
+            <script>
+                function show(evt, RedLiner) {
+                    var i, tabcontent, tablinks;
+                    tabcontent = document.getElementsByClassName("tabcontent");
+                    for (i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].style.display = "none";
+                    }
+                    tablinks = document.getElementsByClassName("tablinks");
+                    for (i = 0; i < tablinks.length; i++) {
+                        tablinks[i].className = tablinks[i].className.replace(" active", "");
+                    }
+                    document.getElementById(RedLiner).style.display = "block";
+                    evt.currentTarget.className += " active";
+                }
+            </script>
 
         </div>
 
