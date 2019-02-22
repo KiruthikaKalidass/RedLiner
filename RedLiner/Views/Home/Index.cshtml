@@ -82,27 +82,43 @@
                 <input type="button" name="Save" value="Save" onclick="show(event,'View')" style="height: 30px;width: 50px;background-color:#d8d4d0;" />
                 <hr />
                 <div>
-
-                    <input type="checkbox" />Point<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:140px;"></i>
-                    <hr />
-                    <input type="checkbox" />Multi Point<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:110px;"></i>
-                    <hr />
-                    <input type="checkbox" />Line<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:147px;"></i>
-                    <hr />
-                    <input type="checkbox" />PolyLine<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:123px;"></i>
-                    <hr />
-                    <input type="checkbox" />Polygon<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:125px;"></i>
-                    <hr />
-                    <input type="checkbox" />Circle<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:137px;"></i>
-                    <hr />
-                    <input type="checkbox" />Ellipse<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:133px;"></i>
-                    <hr />
-                    <input type="checkbox" />Arrow<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:136px;"></i>
-                    <hr />
-                    <input type="checkbox" />Freehand Polygon<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:71px;"></i>
-                    <hr />
-                    <input type="checkbox" />Freehand PolyLine<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:71px;"></i>
+                  
+                            <input type="checkbox" />Point
+                            <i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:140px;"></i>
+                        <hr />
+                        <input type="checkbox" />Multi Point
+                        <i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:110px;"></i>
+                        <hr />
+                        <input type="checkbox" />Line
+                        <i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:147px;"></i>
+                        <hr />
+                        <input type="checkbox" />PolyLine
+                        <i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:123px;"></i>
+                        <hr />
+                        <input type="checkbox" />Polygon
+                        <i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:125px;"></i>
+                        <hr />
+                        <input type="checkbox" />Circle
+                        <i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:137px;"></i>
+                        <hr />
+                        <input type="checkbox" />Ellipse
+                        <i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:133px;"></i>
+                        <hr />
+                        <input type="checkbox" />Arrow
+                        <i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:136px;"></i>
+                        <hr />
+                        <input type="checkbox" />Freehand Polygon
+                        <i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:71px;"></i>
+                        <hr />
+                        <input type="checkbox" />Freehand PolyLine
+                        <i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:71px;"></i>
+                   
                 </div>
+                <script>
+                    $(document).on('click', 'input[type="checkbox"]', function () {
+                        $('input[type="checkbox"]').not(this).prop('checked', false);
+                    });
+                </script>
             </div>
 
             <script>

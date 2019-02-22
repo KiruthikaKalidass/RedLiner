@@ -6,10 +6,11 @@
     <title>RedLiner</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://js.arcgis.com/3.27/"></script>
     <script>
         var toolbar, symbol, geomTask, openStreetMapLayer;
-               require([
+        require([
             "esri/map",
             "esri/dijit/Search",
             "esri/dijit/Scalebar",
@@ -34,12 +35,12 @@
             "dojo/domReady!"
         ], function (Map, Search, Scalebar, Draw, Graphic, SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol, parser, registry, Measurement, BasemapGallery, arcgisUtils, OverviewMap, Print, LocateButton, OpenStreetMapLayer) {
             parser.parse();
-           
-             var map = new Map("map", {
-                basemap: "topo",  
-                center: [78, 10], 
-                 zoom: 13,
-                 smartNavigation: true
+
+            var map = new Map("map", {
+                basemap: "topo",
+                center: [78, 10],
+                zoom: 13,
+                smartNavigation: true
             });
             var overviewMap = new OverviewMap({
                 map: map,
@@ -51,7 +52,7 @@
                 url: "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task"
             }, "printer");
             printer.startup();
-                
+
 
             var basemapGallery = new BasemapGallery({
                 showArcGISBasemaps: true,
@@ -62,9 +63,9 @@
             basemapGallery.on("error", function (msg) {
                 console.log("basemap gallery error:  ", msg);
             });
-              var search = new Search({
-                    map: map
-              }, "search");
+            var search = new Search({
+                map: map
+            }, "search");
             search.startup();
             var scalebar = new Scalebar({
                 map: map,
@@ -74,14 +75,14 @@
 
             map.on("load", createToolbar);
 
-      
+
             registry.forEach(function (d) {
-              
+
                 if (d.declaredClass === "dijit.form.Button") {
                     d.on("click", activateTool);
                 }
             });
-            
+
 
             function activateTool() {
                 var tool = this.label.toUpperCase().replace(/ /g, "_");
@@ -116,11 +117,11 @@
 
             var measurement = new Measurement({ map: map }, "measurement");
             measurement.startup();
-           myLocation = new LocateButton({
+            myLocation = new LocateButton({
                 map: map
             }, "LocateButton");
-            myLocation.startup();  
-        
+            myLocation.startup();
+
         });
     </script>
 </head>
