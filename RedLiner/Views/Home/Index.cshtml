@@ -1,6 +1,5 @@
 ﻿<div class="calcite">
-    <link rel="stylesheet" href="https://js.arcgis.com/3.27/dijit/themes/claro/claro.css">
-    <link rel="stylesheet" href="https://js.arcgis.com/3.27/dijit/themes/nihilo/nihilo.css">
+
     <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/themes/calcite/dijit/calcite.css">
     <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/themes/calcite/esri/esri.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -11,23 +10,25 @@
         <h1>REDLINER</h1>
     </div>
     <div class="main">
-        <div class="content" style="width:82%;float: left;border:solid;height:550px;">
+        <div class="content" style="width:82%;float: left;border:solid;height:550px;border-width:2px;">
             <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters:false" style="width: 100%; height: 100%; margin:0;">
                 <div id="map" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" style="padding:0">
                 </div>
+                <div id="search"></div>
                 <div id="LocateButton"></div>
+
 
             </div>
         </div>
 
-        <div class="right" style="width:18%; border:solid;border-color:white; float: right;">
+        <div class="right" style="width:18%; border:solid;border-color:white; float: right; ">
             <div class="tab">
                 <button class="tablinks" onclick="show(event, 'Activity')" style="width:125px;">Activity</button>
                 <button class="tablinks" onclick="show(event, 'RedLiner')" style="width:112px;">RedLiner</button>
-                
+
             </div>
             <div id="Activity" class="tabcontent">
-                <div id="search"></div>
+             
                 <div data-dojo-type="dijit/TitlePane" data-dojo-props="title:'Shapes',open:false " style="color:black;background-color:gray;">
                     <div data-dojo-props="dijit/layout/ContentPane" style="width:250px; height:129px;overflow:auto;">
                         <div>
@@ -63,7 +64,7 @@
 
                 </div>
                 <div data-dojo-type="dijit/TitlePane"
-                     data-dojo-props="title:'BaseMapGallery', open:false" style="color:black;background-color:gray;">
+                     data-dojo-props="title:'BaseMapGallery', open:false" style="color:black;background-color:white;">
                     <div data-dojo-type="dijit/layout/ContentPane" style="width:250px; height:103px; overflow:auto;">
                         <div id="basemapGallery"></div>
                     </div>
@@ -80,29 +81,30 @@
                 <input type="text" style="height: 30px; width: 160px;" />
                 <input type="button" name="Save" value="Save" onclick="show(event,'View')" style="height: 30px;width: 50px;background-color:#d8d4d0;" />
                 <hr />
-                <div >
-                    <input type="checkbox" />Point<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
-                   
-                    <input type="checkbox" />Multi Point<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
-                   
-                    <input type="checkbox" />Line<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
-              
-                    <input type="checkbox" />PolyLine<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
-                   
-                    <input type="checkbox" />Polygon<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
-                  
-                    <input type="checkbox" />Circle<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
-               
-                    <input type="checkbox" />Ellipse<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
-                  
-                    <input type="checkbox" />Arrow<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
-                   
-                    <input type="checkbox" />Freehand Polygon<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
-                  
-                    <input type="checkbox" />Freehand PolyLine<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;"></i><br />
+                <div>
+
+                    <input type="checkbox" />Point<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:140px;"></i>
+                    <hr />
+                    <input type="checkbox" />Multi Point<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:110px;"></i>
+                    <hr />
+                    <input type="checkbox" />Line<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:147px;"></i>
+                    <hr />
+                    <input type="checkbox" />PolyLine<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:123px;"></i>
+                    <hr />
+                    <input type="checkbox" />Polygon<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:125px;"></i>
+                    <hr />
+                    <input type="checkbox" />Circle<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:137px;"></i>
+                    <hr />
+                    <input type="checkbox" />Ellipse<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:133px;"></i>
+                    <hr />
+                    <input type="checkbox" />Arrow<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:136px;"></i>
+                    <hr />
+                    <input type="checkbox" />Freehand Polygon<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:71px;"></i>
+                    <hr />
+                    <input type="checkbox" />Freehand PolyLine<i class="fa fa-times" title="Remove" style="font-size:15px;color:red;padding-left:71px;"></i>
                 </div>
             </div>
-         
+
             <script>
                 function show(evt, Activity) {
                     var i, tabcontent, tablinks;

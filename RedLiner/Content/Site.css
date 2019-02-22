@@ -12,8 +12,8 @@
     display: block;
     position: absolute;
     z-index: 2;
-    top: 119px;
-    left:68px;
+    top: 23px;
+    left:62px;
     opacity:1;
 }
 #measurement
@@ -86,8 +86,13 @@
     border: 1px solid #ccc;
     border-top: none;
 }
-hr {
-    border-color: black;
-    margin-top: 7px;
-    margin-bottom: 15px;
+.ovwContainer{
+    border:solid !important;
+    border-color:black !important;
+}
+
+hr{
+    border-top:1px solid black;
+    margin-top:3px !important;
+    margin-bottom:15px !important;
 }
