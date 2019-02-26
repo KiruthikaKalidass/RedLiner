@@ -1,11 +1,12 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RedLiner</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+ 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://js.arcgis.com/3.27/"></script>
     <script>
@@ -16,6 +17,7 @@
             "esri/dijit/Scalebar",
             "esri/toolbars/draw",
             "esri/graphic",
+            "esri/layers/GraphicsLayer",
             "esri/symbols/SimpleMarkerSymbol",
             "esri/symbols/SimpleLineSymbol",
             "esri/symbols/SimpleFillSymbol",
@@ -30,10 +32,13 @@
             "dijit/layout/BorderContainer",
             "dijit/layout/ContentPane",
             "dijit/TitlePane",
+            "esri/toolbars/navigation",
+            "dojo/on",
+            "dijit/Toolbar",
             "dijit/form/Button",
             "dijit/WidgetSet",
             "dojo/domReady!"
-        ], function (Map, Search, Scalebar, Draw, Graphic, SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol, parser, registry, Measurement, BasemapGallery, arcgisUtils, OverviewMap, Print, LocateButton, OpenStreetMapLayer) {
+        ], function (Map, Search, Scalebar, Draw, Graphic, GraphicsLayer, SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol, parser, registry, Measurement, BasemapGallery, arcgisUtils, OverviewMap, Print, LocateButton, OpenStreetMapLayer,navigation,on) {
             parser.parse();
 
             var map = new Map("map", {
@@ -42,6 +47,8 @@
                 zoom: 13,
                 smartNavigation: true
             });
+          
+            var graphicslayer = new GraphicsLayer();
             var overviewMap = new OverviewMap({
                 map: map,
                 visible: true
@@ -82,8 +89,6 @@
                     d.on("click", activateTool);
                 }
             });
-
-
             function activateTool() {
                 var tool = this.label.toUpperCase().replace(/ /g, "_");
                 toolbar.activate(Draw[tool]);
@@ -121,7 +126,6 @@
                 map: map
             }, "LocateButton");
             myLocation.startup();
-
         });
     </script>
 </head>

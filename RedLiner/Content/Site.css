@@ -21,8 +21,6 @@
     color:black;
     background-color:gray;
 }
-
-
 .dijitTitlePaneContentInner{
     padding-left:0px !important;
 }
@@ -96,3 +94,13 @@ hr{
     margin-top:3px !important;
     margin-bottom:15px !important;
 }
+.esriMeasurementSeparator{
+height:0px !important;
+}
+.dijitContentPane esriMeasurementButtonContainer{
+  width:211px;
+}
+.esriMeasurement{
+    width:210px !important;
+}
+
