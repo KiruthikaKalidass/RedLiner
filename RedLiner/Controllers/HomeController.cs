@@ -9,33 +9,32 @@ namespace RedLiner.Controllers
 {
     public class HomeController : Controller
     {
-        ProjectDB empDB = new ProjectDB();
+        R_DBHandle empDB = new R_DBHandle();
         public ActionResult Index()
         {
             return View();
         }
+
         public JsonResult List()
         {
             return Json(empDB.ListAll(), JsonRequestBehavior.AllowGet);
         }
-        public JsonResult Add(Project emp)
+        public JsonResult Add(R_Model emp)
         {
             return Json(empDB.Add(emp), JsonRequestBehavior.AllowGet);
         }
-        public JsonResult GetbyID(int Id)
+        public JsonResult GetbyID(int ID)
         {
-            var Employee = empDB.ListAll().Find(x => x.Id.Equals(Id));
+            var Employee = empDB.ListAll().Find(x => x.ProjectID.Equals(ID));
             return Json(Employee, JsonRequestBehavior.AllowGet);
         }
-        public JsonResult Update(Project emp)
+        public JsonResult Update(R_Model emp)
         {
             return Json(empDB.Update(emp), JsonRequestBehavior.AllowGet);
         }
-        public JsonResult Delete(int Id)
+        public JsonResult Delete(int ID)
         {
-            return Json(empDB.Delete(Id), JsonRequestBehavior.AllowGet);
+            return Json(empDB.Delete(ID), JsonRequestBehavior.AllowGet);
         }
-
-        
     }
 }
