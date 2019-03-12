@@ -103,4 +103,15 @@ height:0px !important;
 .esriMeasurement{
     width:210px !important;
 }
+.table {
+    width: 20% !important;
+}
+
+.btn-primary {
+    width: 105px !important;
+}
+
+.container {
+    padding: 3px !important;
+}
 
